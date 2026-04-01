@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dexie.Option - Chia Offer Tracker</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Scripts -->
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/app.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span style="font-size: 1.8rem;">D</span>exie.Option
+        </div>
+        <nav>
+            <a href="index.html" class="active">Offers</a>
+            <a href="upload.html" class="btn-primary">Upload Offer</a>
+        </nav>
+    </header>
+    <main class="container">
+        <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 2.5rem;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+                <div>
+                    <h1 style="font-size: 2.5rem; font-weight: 800; letter-spacing: -1.5px; margin-bottom: 0.2rem;">Chia Option Offers</h1>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Premium token-for-option explorer.</p>
+                </div>
+                
+                <form action="index.html" method="GET" style="display: flex; gap: 0.5rem;">
+                    <input type="text" name="q" placeholder="Trade ID or Keyword..." 
+                           style="background: var(--card-bg); border: 1px solid var(--card-border); color: white; padding: 0.7rem 1.25rem; border-radius: 9999px; width: 300px; font-size: 0.85rem; outline: none;">
+                    <button type="submit" class="btn-primary" style="padding: 0.7rem 1.5rem; font-size: 0.85rem;">Search</button>
+                </form>
+            </div>
+
+            <!-- Filter Bar -->
+            <form action="index.html" method="GET" class="filter-bar">
+                <div class="filter-group">
+                    <label class="filter-label">Offer Status</label>
+                    <select name="status" class="custom-select">
+                        <option value="">Any Status</option>
+                        <option value="pending">Pending</option>
+                        <option value="active">Active</option>
+                        <option value="completed">Completed</option>
+                        <option value="cancelled">Cancelled</option>
+                        <option value="expired">Expired</option>
+                        <option value="error">Error</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label">Premium Token</label>
+                    <select name="premium" class="custom-select">
+                        <option value="">Any Premium</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label">Underlying Asset</label>
+                    <select name="underlying" class="custom-select">
+                        <option value="">Any Underlying</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label">Strike Asset</label>
+                    <select name="strike" class="custom-select">
+                        <option value="">Any Strike</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label">Expiration</label>
+                    <select name="expire_within" class="custom-select">
+                        <option value="">Any Time</option>
+                        <option value="86400">Next 24 Hours</option>
+                        <option value="604800">Next 7 Days</option>
+                        <option value="2592000">Next 30 Days</option>
+                    </select>
+                </div>
+
+                <div class="filter-actions">
+                    <button type="submit" class="btn-primary btn-filter">Apply Filters</button>
+                    <a href="index.html" class="btn-reset">Reset All</a>
+                </div>
+            </form>
+        </div>
+
+        <div id="offers-list" class="offers-list">
+            <!-- Populated by JS -->
+            <div style="text-align: center; padding: 5rem;">
+                <p style="color: var(--text-muted);">Loading offers...</p>
+            </div>
+        </div>
+
+        <div id="pagination" style="margin-top: 2rem; display: flex; justify-content: center; gap: 0.5rem;">
+            <!-- Populated by JS -->
+        </div>
+    </main>
+    <footer style="margin-top: 5rem; padding: 2rem; border-top: 1px solid var(--card-border); text-align: center; color: var(--text-muted); font-size: 0.8rem;">
+        &copy; 2026 Dexie.Option - Chia Offer Tracking Dashboard
+    </footer>
+</body>
+</html>
