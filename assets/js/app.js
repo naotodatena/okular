@@ -177,7 +177,7 @@ function renderOfferRow(offer) {
             </div>` : ''}
             <div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px dashed var(--card-border); padding-top: 0.75rem;">
                  <div style="font-size: 0.7rem; color: var(--text-muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 80%; flex-shrink: 1;">
-                     Trade ID: <a href="detail.html?id=${idFull}" style="color: var(--primary-purple); text-decoration: underline;">${idFull}</a>
+                     Trade ID: <a href="detail.html?id=${idFull}" style="color: var(--primary-green); text-decoration: underline;">${idFull}</a>
                  </div>
                  <button onclick="toggleDetails('${rowId}')" class="btn-primary" style="padding: 0.3rem 1rem; font-size: 0.7rem; flex-shrink: 0;">REDUCE</button>
             </div>
@@ -198,7 +198,7 @@ function renderAssetInfo(a, isTaker) {
         </div>
         <div class="asset-info">
             ${isOption ? `
-                <span class="asset-amount" style="color: var(--primary-purple);">${window.API.getOptionTermsSummary(a)}</span>
+                <span class="asset-amount" style="color: var(--primary-green);">${window.API.getOptionTermsSummary(a)}</span>
             ` : `
                 <span class="asset-amount">${window.API.formatAmount(a.amount, a.asset && a.asset.ticker === 'XCH', a)}</span>
                 <span class="asset-symbol">${window.API.getAssetLabel(a)}</span>
